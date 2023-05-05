@@ -1,5 +1,6 @@
 import re
 import requests
+import os
 # Exercise 2: Write a program to prompt for a file name, and then read
 # through the file and look for lines of the form:
 # X-DSPAM-Confidence: 0.8475
@@ -24,6 +25,7 @@ def avg_XDSPAM(url):
             y = re.findall(r"([0-9].[0-9]*)", line)
             y = float(y[0])
             x.append(y)
+    os.remove(fil)
     return x
 
 def downloadfile(url):
